@@ -1,0 +1,94 @@
+//
+// Light Sidebar(used by Light Sidebar layout only)
+//
+
+[data-kt-app-layout="light-sidebar"] {
+  .app-sidebar {
+    background-color: var(--#{$prefix}app-sidebar-light-bg-color);
+    border-right: 1px solid $gray-300 !important;
+
+    .hover-scroll-overlay-y {
+      @include scrollbar-color(
+        var(--#{$prefix}app-sidebar-light-scrollbar-color),
+        var(--#{$prefix}app-sidebar-light-scrollbar-color-hover)
+      );
+    }
+
+    .app-sidebar-logo {
+      border-bottom: 1px solid
+        var(--#{$prefix}app-sidebar-light-separator-color);
+    }
+
+    .menu {
+      font-weight: $font-weight-semibold;
+
+      .menu-item {
+        .menu-heading {
+          color: var(
+            --#{$prefix}app-sidebar-light-menu-heading-color
+          ) !important;
+        }
+
+        @include menu-link-default-state(
+          $title-color: var(--#{$prefix}gray-700),
+          $icon-color: var(--#{$prefix}gray-500),
+          $bullet-color: var(--#{$prefix}gray-400),
+          $arrow-color: var(--#{$prefix}gray-500),
+          $bg-color: null,
+          $all-links: false
+        );
+
+        @include menu-link-hover-state(
+          $title-color: var(--#{$prefix}gray-900),
+          $icon-color: var(--#{$prefix}gray-700),
+          $bullet-color: var(--#{$prefix}gray-500),
+          $arrow-color: var(--#{$prefix}gray-700),
+          $bg-color: null,
+          $all-links: false
+        );
+
+        @include menu-link-show-state(
+          $title-color: var(--#{$prefix}gray-900),
+          $icon-color: var(--#{$prefix}gray-700),
+          $bullet-color: var(--#{$prefix}gray-500),
+          $arrow-color: var(--#{$prefix}gray-700),
+          $bg-color: null,
+          $all-links: false
+        );
+
+        @include menu-link-here-state(
+          $title-color: var(--#{$prefix}gray-900),
+          $icon-color: var(--#{$prefix}gray-700),
+          $bullet-color: var(--#{$prefix}gray-500),
+          $arrow-color: var(--#{$prefix}gray-700),
+          $bg-color: null,
+          $all-links: false
+        );
+
+        @include menu-link-active-state(
+          $title-color: var(--#{$prefix}white),
+          $icon-color: var(--#{$prefix}white),
+          $bullet-color: var(--#{$prefix}white),
+          $arrow-color: var(--#{$prefix}white),
+          $bg-color: var(--#{$prefix}primary-active),
+          $all-links: false
+        );
+      }
+    }
+  }
+}
+
+[data-kt-app-layout="light-sidebar"][data-kt-app-header-fixed="true"] {
+  .app-header {
+    background-color: var(--#{$prefix}app-bg-color);
+    box-shadow: none;
+    border-bottom: 1px dashed var(--#{$prefix}app-sidebar-light-separator-color);
+  }
+
+  .app-sidebar {
+    .app-sidebar-logo {
+      border-bottom: 1px dashed
+        var(--#{$prefix}app-sidebar-light-separator-color);
+    }
+  }
+}
